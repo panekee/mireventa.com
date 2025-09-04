@@ -1,16 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Mieventa</title>
-  <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-    h1 { color: #2575fc; }
-    p { font-size: 1.2em; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MieVenta</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            background: #ff6f61;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .card {
+            width: 200px;
+            height: 250px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .card img.static {
+            width: 100px;
+            height: 100px;
+            transition: opacity 0.3s ease;
+        }
+
+        .card img.gif {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: calc(50% - 50px);
+            left: calc(50% - 50px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover img.static {
+            opacity: 0;
+        }
+
+        .card:hover img.gif {
+            opacity: 1;
+        }
+
+        .card p {
+            margin-top: 120px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+    </style>
 </head>
 <body>
-  <h1>Bienvenido a Mieventa</h1>
-  <p>Tu plataforma de eventos 100% online con GitHub Pages</p>
+
+<header>MieVenta</header>
+
+<div class="cards-container">
+    <div class="card">
+        <img class="static" src="https://via.placeholder.com/100?text=Producto1" alt="Producto 1">
+        <img class="gif" src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Producto 1 GIF">
+        <p>Producto 1</p>
+    </div>
+
+    <div class="card">
+        <img class="static" src="https://via.placeholder.com/100?text=Producto2" alt="Producto 2">
+        <img class="gif" src="https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif" alt="Producto 2 GIF">
+        <p>Producto 2</p>
+    </div>
+
+    <div class="card">
+        <img class="static" src="https://via.placeholder.com/100?text=Producto3" alt="Producto 3">
+        <img class="gif" src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" alt="Producto 3 GIF">
+        <p>Producto 3</p>
+    </div>
+</div>
+
 </body>
 </html>

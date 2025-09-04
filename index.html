@@ -54,33 +54,36 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
-        .card img.static {
-            width: 100px;
-            height: 100px;
-            transition: opacity 0.3s ease;
+        .card video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            border-radius: 15px;
         }
 
-        .card img.gif {
+        .card img.overlay {
             position: absolute;
             width: 100px;
             height: 100px;
             top: calc(50% - 50px);
             left: calc(50% - 50px);
-            opacity: 0;
+            z-index: 1;
             pointer-events: none;
-            transition: opacity 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
-        .card:hover img.static {
-            opacity: 0;
-        }
-
-        .card:hover img.gif {
-            opacity: 1;
+        .card:hover img.overlay {
+            transform: scale(1.1);
         }
 
         .card p {
-            margin-top: 120px;
+            position: relative;
+            z-index: 2;
+            margin-top: 180px;
             font-weight: bold;
             text-align: center;
         }
@@ -93,21 +96,27 @@
 
 <div class="cards-container">
     <div class="card">
-        <img class="static" src="https://via.placeholder.com/100?text=Producto1" alt="Producto 1">
-        <img class="gif" src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Producto 1 GIF">
-        <p>Producto 1</p>
+        <video class="video" loop muted autoplay playsinline>
+            <source src="personaje1.mp4" type="video/mp4">
+        </video>
+        <img class="overlay" src="personaje1.png" alt="Personaje 1">
+        <p>Personaje 1</p>
     </div>
 
     <div class="card">
-        <img class="static" src="https://via.placeholder.com/100?text=Producto2" alt="Producto 2">
-        <img class="gif" src="https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif" alt="Producto 2 GIF">
-        <p>Producto 2</p>
+        <video class="video" loop muted autoplay playsinline>
+            <source src="personaje2.mp4" type="video/mp4">
+        </video>
+        <img class="overlay" src="personaje2.png" alt="Personaje 2">
+        <p>Personaje 2</p>
     </div>
 
     <div class="card">
-        <img class="static" src="https://via.placeholder.com/100?text=Producto3" alt="Producto 3">
-        <img class="gif" src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" alt="Producto 3 GIF">
-        <p>Producto 3</p>
+        <video class="video" loop muted autoplay playsinline>
+            <source src="personaje3.mp4" type="video/mp4">
+        </video>
+        <img class="overlay" src="personaje3.png" alt="Personaje 3">
+        <p>Personaje 3</p>
     </div>
 </div>
 
